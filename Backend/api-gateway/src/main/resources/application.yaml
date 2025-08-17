@@ -17,12 +17,6 @@ spring:
             - Path=/api/auth/**
           filters:
             - name: AuthenticationFilter
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/api/users/**
-          filters:
-            - name: AuthenticationFilter
         - id: account-service
           uri: lb://account-service
           predicates:

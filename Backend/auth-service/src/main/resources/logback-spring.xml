@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <property name="LOG_DIR" value="logs" />
-    <property name="LOG_FILE_NAME" value="account-service" />
+    <property name="LOG_FILE_NAME" value="auth-service" />
     
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -39,7 +39,7 @@
             <totalSizeCap>2GB</totalSizeCap>
         </rollingPolicy>
     </appender>
-
+    
     <!-- Application Loggers -->
     <logger name="com.bankingapplication" level="DEBUG" additivity="false">
         <appender-ref ref="Console" />
@@ -70,7 +70,7 @@
         <appender-ref ref="Console" />
         <appender-ref ref="RollingFile" />
     </logger>
-
+    
     <!-- Root Logger -->
     <root level="INFO">
         <appender-ref ref="Console" />

@@ -1,11 +1,11 @@
-package com.bankingapplication.account_service.exception;
-
-import java.time.LocalDateTime;
-import java.util.Map;
+package com.bankingapplication.auth_service.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor

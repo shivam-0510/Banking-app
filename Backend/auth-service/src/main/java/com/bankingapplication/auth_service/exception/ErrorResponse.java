@@ -1,21 +1,19 @@
-package com.bankingapplication.account_service.exception;
-
-import java.time.LocalDateTime;
-import java.util.Map;
+package com.bankingapplication.auth_service.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ValidationErrorResponse {
+public class ErrorResponse {
 
     private int status;
     private String message;
     private String path;
-    private Map<String, String> errors;
     private String errorReference;
     private LocalDateTime timestamp;
 }
