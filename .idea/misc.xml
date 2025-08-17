@@ -17,6 +17,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Backend/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/Backend/transaction-service/pom.xml" />
         <option value="$PROJECT_DIR$/Backend/user-service/pom.xml" />
       </set>
     </option>
