@@ -12,6 +12,7 @@ export const AccountManagement: React.FC<AccountManagementProps> = ({ onRefresh 
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  
 
   useEffect(() => {
     loadAccounts();
@@ -21,6 +22,7 @@ export const AccountManagement: React.FC<AccountManagementProps> = ({ onRefresh 
     try {
       setIsLoading(true);
       const data = await apiService.getAllAccounts();
+      console.log('Fetched accounts:', data[0].accountNumber);
       setAccounts(data);
     } catch (error) {
       console.error('Error loading accounts:', error);
@@ -29,6 +31,7 @@ export const AccountManagement: React.FC<AccountManagementProps> = ({ onRefresh 
       setIsLoading(false);
     }
   };
+
 
   const handleStatusChange = async (accountNumber: string, isActive: boolean) => {
     try {
@@ -131,17 +134,17 @@ export const AccountManagement: React.FC<AccountManagementProps> = ({ onRefresh 
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span
                       className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                        account.isActive
+                        account.active
                           ? 'bg-green-100 text-green-800'
                           : 'bg-red-100 text-red-800'
                       }`}
                     >
-                      {account.isActive ? 'ACTIVE' : 'INACTIVE'}
+                      {account.active ? 'ACTIVE' : 'INACTIVE'}
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex justify-end space-x-2">
-                      {account.isActive ? (
+                      {account.active ? (
                         <button
                           onClick={() => handleStatusChange(account.accountNumber, false)}
                           className="text-red-600 hover:text-red-900 flex items-center"

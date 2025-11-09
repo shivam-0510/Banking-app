@@ -36,7 +36,7 @@ export interface Account {
   balance: number;
   currency: string;
   status?: string; // Deprecated - use isActive instead
-  isActive: boolean;
+  active: boolean;
   userId: string;
   createdAt?: string;
   updatedAt?: string;

@@ -90,11 +90,11 @@ export const Accounts: React.FC = () => {
                                 {account.accountType} Account
                               </p>
                               <span className={`ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                                account.isActive
+                                account.active
                                   ? 'bg-green-100 text-green-800' 
                                   : 'bg-gray-100 text-gray-800'
                               }`}>
-                                {account.isActive ? 'ACTIVE' : 'INACTIVE'}
+                                {account.active ? 'ACTIVE' : 'INACTIVE'}
                               </span>
                             </div>
                             <p className="text-sm text-gray-500">{account.accountNumber}</p>

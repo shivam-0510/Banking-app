@@ -31,7 +31,7 @@ export const AdminDashboard: React.FC = () => {
       ]);
 
       const activeUsers = users.filter((u) => u.active).length;
-      const activeAccounts = accounts.filter((a) => a.isActive).length;
+      const activeAccounts = accounts.filter((a) => a.active).length;
       const totalBalance = accounts.reduce((sum, acc) => sum + (parseFloat(acc.balance.toString()) || 0), 0);
 
       setStats({
