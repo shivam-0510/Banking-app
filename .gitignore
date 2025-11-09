@@ -1,6 +1,0 @@
-# Project exclude paths
-/Backend/account-service/target/
-/Backend/api-gateway/target/
-/Backend/auth-service/target/
-/Backend/eureka-server/target/
-/Backend/transaction-service/target/
