@@ -28834,3 +28834,2262 @@ This generated password is for development use only. Your security configuration
 2025-11-09 19:17:01.895 [main] [] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
 2025-11-09 19:17:01.933 [main] [] INFO  c.b.a.AccountServiceApplication - Started AccountServiceApplication in 42.746 seconds (process running for 43.931)
 2025-11-09 19:17:01.954 [DiscoveryClient-InstanceInfoReplicator-0] [] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_ACCOUNT-SERVICE/host.docker.internal:account-service:8082 - registration status: 204
+2025-11-09 19:17:28.092 [http-nio-8082-exec-6] [] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-09 19:17:28.094 [http-nio-8082-exec-6] [] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-09 19:17:28.106 [http-nio-8082-exec-6] [] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2025-11-09 19:17:28.265 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:17:28.311 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:17:28.417 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:17:28.455 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 142 ms
+2025-11-09 19:17:28.457 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 146 ms
+2025-11-09 19:17:28.458 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 148 ms
+2025-11-09 19:17:28.481 [http-nio-8082-exec-7] [f00a2c8c-d2e0-4756-a378-f550c4bccf06] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 216ms
+2025-11-09 19:17:28.494 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:17:28.495 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:17:28.496 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:17:28.499 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 3 ms
+2025-11-09 19:17:28.499 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 4 ms
+2025-11-09 19:17:28.499 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 4 ms
+2025-11-09 19:17:28.501 [http-nio-8082-exec-8] [5f732891-373e-4ee6-aae5-aebd7327564f] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 8ms
+2025-11-09 19:17:32.171 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:32.188 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:32.188 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:32.206 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:32.211 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 21 ms
+2025-11-09 19:17:32.212 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 23 ms
+2025-11-09 19:17:32.212 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 23 ms
+2025-11-09 19:17:32.213 [http-nio-8082-exec-1] [3afdec26-2d21-4641-945d-cdf4f555c5d5] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 42ms
+2025-11-09 19:17:32.226 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:32.228 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:32.228 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:32.230 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:32.233 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 4 ms
+2025-11-09 19:17:32.233 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 5 ms
+2025-11-09 19:17:32.233 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 6 ms
+2025-11-09 19:17:32.235 [http-nio-8082-exec-2] [19552059-46ef-4cad-b78c-a7456af1c255] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 9ms
+2025-11-09 19:17:35.235 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:35.238 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:35.238 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:35.241 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:35.243 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 4 ms
+2025-11-09 19:17:35.243 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 5 ms
+2025-11-09 19:17:35.243 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 5 ms
+2025-11-09 19:17:35.244 [http-nio-8082-exec-7] [952259c5-8640-4ddf-9ed5-0f1521c42079] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 9ms
+2025-11-09 19:17:35.260 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:35.261 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:35.261 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:35.262 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:35.265 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 3 ms
+2025-11-09 19:17:35.265 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 3 ms
+2025-11-09 19:17:35.265 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 3 ms
+2025-11-09 19:17:35.266 [http-nio-8082-exec-8] [f442e0bc-4f97-4ddc-8aaa-30f13bff2895] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 6ms
+2025-11-09 19:17:36.577 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] INFO  c.b.a.filter.RequestLoggingFilter - Received request: PUT /api/accounts/CK9162278830/status ?isActive=true
+2025-11-09 19:17:36.593 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] INFO  c.b.a.service.AccountService - Updating account status for account: CK9162278830
+2025-11-09 19:17:36.595 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:17:36.599 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 4 ms
+2025-11-09 19:17:36.608 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] CrudRepository.save execution time: 9 ms
+2025-11-09 19:17:36.608 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] INFO  c.b.a.service.AccountService - Account status updated successfully for account: CK9162278830
+2025-11-09 19:17:36.609 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.updateAccountStatus execution time: 15 ms
+2025-11-09 19:17:36.637 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] DEBUG org.hibernate.SQL - 
+    update
+        accounts 
+    set
+        account_number=?,
+        account_type=?,
+        balance=?,
+        created_at=?,
+        currency=?,
+        daily_transaction_limit=?,
+        daily_withdrawal_limit=?,
+        interest_rate=?,
+        is_active=?,
+        minimum_balance=?,
+        overdraft_limit=?,
+        updated_at=?,
+        user_id=? 
+    where
+        id=?
+2025-11-09 19:17:36.658 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.updateAccountStatus execution time: 66 ms
+2025-11-09 19:17:36.660 [http-nio-8082-exec-10] [cbc43918-5627-4438-88b2-b5ecca0654a9] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: PUT /api/accounts/CK9162278830/status - Status 200 - Duration: 83ms
+2025-11-09 19:17:36.675 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:36.677 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:36.677 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:36.679 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:36.682 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 4 ms
+2025-11-09 19:17:36.682 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 4 ms
+2025-11-09 19:17:36.682 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 5 ms
+2025-11-09 19:17:36.683 [http-nio-8082-exec-1] [2325e489-8dbf-44b1-b53b-c1d6c22c2ada] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 8ms
+2025-11-09 19:17:36.724 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:36.725 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:36.725 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:36.726 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:36.729 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 5 ms
+2025-11-09 19:17:36.731 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 5 ms
+2025-11-09 19:17:36.731 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 5 ms
+2025-11-09 19:17:36.731 [http-nio-8082-exec-2] [1c5cf3ff-94b6-45ba-b729-6846d7c843eb] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 7ms
+2025-11-09 19:17:36.743 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:36.744 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:36.745 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:36.746 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:36.749 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 3 ms
+2025-11-09 19:17:36.749 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 4 ms
+2025-11-09 19:17:36.749 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 4 ms
+2025-11-09 19:17:36.750 [http-nio-8082-exec-3] [40513d68-5c48-4139-9d79-27bb3388eab3] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 7ms
+2025-11-09 19:17:36.759 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:36.761 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:17:36.762 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:17:36.763 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:17:36.765 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 3 ms
+2025-11-09 19:17:36.765 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 4 ms
+2025-11-09 19:17:36.766 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 4 ms
+2025-11-09 19:17:36.767 [http-nio-8082-exec-5] [21505c97-90bd-41a2-9372-62964e43cc69] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 8ms
+2025-11-09 19:17:46.265 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:17:46.268 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:17:46.276 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:17:46.279 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 11 ms
+2025-11-09 19:17:46.279 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 12 ms
+2025-11-09 19:17:46.279 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 12 ms
+2025-11-09 19:17:46.282 [http-nio-8082-exec-7] [e1256e17-54ce-47f4-ba5a-33b3adb49cbb] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 16ms
+2025-11-09 19:17:46.302 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:17:46.305 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:17:46.310 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:17:46.312 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 6 ms
+2025-11-09 19:17:46.312 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 7 ms
+2025-11-09 19:17:46.313 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 7 ms
+2025-11-09 19:17:46.315 [http-nio-8082-exec-8] [4e232a18-bf43-4d32-9d1a-399b96f79ad2] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 13ms
+2025-11-09 19:17:54.131 [http-nio-8082-exec-4] [8b80841d-6dcc-47af-947b-417071d35ab9] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:54.141 [http-nio-8082-exec-4] [8b80841d-6dcc-47af-947b-417071d35ab9] ERROR c.b.a.e.GlobalExceptionHandler - Access denied: Reference: 2976dbe2
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38)
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:92)
+	at org.springframework.security.authorization.ObservationAuthorizationManager.handleDeniedInvocation(ObservationAuthorizationManager.java:113)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:288)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:261)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197)
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.bankingapplication.account_service.controller.AccountController$$SpringCGLIB$$0.getAllAccounts(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.bankingapplication.account_service.filter.RequestLoggingFilter.doFilterInternal(RequestLoggingFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at com.bankingapplication.account_service.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-09 19:17:54.151 [http-nio-8082-exec-4] [8b80841d-6dcc-47af-947b-417071d35ab9] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 403 - Duration: 20ms
+2025-11-09 19:17:54.165 [http-nio-8082-exec-6] [333d6694-a67c-485d-9fb0-899ab35b3018] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:17:54.166 [http-nio-8082-exec-6] [333d6694-a67c-485d-9fb0-899ab35b3018] ERROR c.b.a.e.GlobalExceptionHandler - Access denied: Reference: cc765168
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38)
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:92)
+	at org.springframework.security.authorization.ObservationAuthorizationManager.handleDeniedInvocation(ObservationAuthorizationManager.java:113)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:288)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:261)
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197)
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.bankingapplication.account_service.controller.AccountController$$SpringCGLIB$$0.getAllAccounts(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.bankingapplication.account_service.filter.RequestLoggingFilter.doFilterInternal(RequestLoggingFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at com.bankingapplication.account_service.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-09 19:17:54.168 [http-nio-8082-exec-6] [333d6694-a67c-485d-9fb0-899ab35b3018] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 403 - Duration: 3ms
+2025-11-09 19:18:07.993 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:18:07.994 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:18:07.998 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:18:08.001 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 7 ms
+2025-11-09 19:18:08.002 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 7 ms
+2025-11-09 19:18:08.002 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 7 ms
+2025-11-09 19:18:08.004 [http-nio-8082-exec-1] [ea677261-c8f2-4909-96a6-b4d0a2326058] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 11ms
+2025-11-09 19:18:08.018 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:18:08.020 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:18:08.022 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:18:08.024 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 4 ms
+2025-11-09 19:18:08.024 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 4 ms
+2025-11-09 19:18:08.025 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 5 ms
+2025-11-09 19:18:08.027 [http-nio-8082-exec-5] [45ec84be-2332-49c1-8adc-7545f66d2f67] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 9ms
+2025-11-09 19:18:31.232 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:18:31.237 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:18:31.247 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:18:31.255 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 17 ms
+2025-11-09 19:18:31.255 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 18 ms
+2025-11-09 19:18:31.256 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 18 ms
+2025-11-09 19:18:31.258 [http-nio-8082-exec-10] [19dba8ec-fe71-4938-9bc1-cc5cb6b7dde1] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 26ms
+2025-11-09 19:18:31.277 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:18:31.278 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:18:31.283 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:18:31.287 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 7 ms
+2025-11-09 19:18:31.287 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 8 ms
+2025-11-09 19:18:31.287 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 8 ms
+2025-11-09 19:18:31.289 [http-nio-8082-exec-2] [0a1de514-0ab5-4cde-b521-831704880599] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 12ms
+2025-11-09 19:18:37.189 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:18:37.192 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:18:37.192 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:18:37.203 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:18:37.210 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 16 ms
+2025-11-09 19:18:37.210 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 17 ms
+2025-11-09 19:18:37.210 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 17 ms
+2025-11-09 19:18:37.225 [http-nio-8082-exec-3] [8f9a3215-d682-4d11-a3e2-f00b30c09125] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 36ms
+2025-11-09 19:18:37.258 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:18:37.262 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:18:37.263 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:18:37.266 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:18:37.270 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 6 ms
+2025-11-09 19:18:37.270 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 7 ms
+2025-11-09 19:18:37.270 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 8 ms
+2025-11-09 19:18:37.272 [http-nio-8082-exec-4] [cb28edd8-aafb-47a1-bb41-4ec82c3eb7ad] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 14ms
+2025-11-09 19:18:42.391 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:18:42.393 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:18:42.394 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:18:42.398 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:18:42.403 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 8 ms
+2025-11-09 19:18:42.404 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 9 ms
+2025-11-09 19:18:42.404 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 9 ms
+2025-11-09 19:18:42.407 [http-nio-8082-exec-1] [5b2d96d0-9302-4240-8e1e-f6edccdb9b3a] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 16ms
+2025-11-09 19:18:42.425 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:18:42.426 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:18:42.426 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:18:42.428 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:18:42.431 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 4 ms
+2025-11-09 19:18:42.431 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 5 ms
+2025-11-09 19:18:42.431 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 5 ms
+2025-11-09 19:18:42.435 [http-nio-8082-exec-5] [f217f29c-4515-40ca-b40a-f1581ae6420b] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 10ms
+2025-11-09 19:18:43.660 [http-nio-8082-exec-3] [ff995e94-4dff-4956-948b-dad629b2dd33] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/public/account-types 
+2025-11-09 19:18:43.661 [http-nio-8082-exec-3] [ff995e94-4dff-4956-948b-dad629b2dd33] INFO  c.b.a.controller.AccountController - Account types endpoint called
+2025-11-09 19:18:43.661 [http-nio-8082-exec-3] [ff995e94-4dff-4956-948b-dad629b2dd33] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountTypes execution time: 0 ms
+2025-11-09 19:18:43.663 [http-nio-8082-exec-3] [ff995e94-4dff-4956-948b-dad629b2dd33] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/public/account-types - Status 200 - Duration: 3ms
+2025-11-09 19:18:43.667 [http-nio-8082-exec-4] [4490898f-64a2-4388-b967-4b22efaa3afd] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/public/account-types 
+2025-11-09 19:18:43.667 [http-nio-8082-exec-4] [4490898f-64a2-4388-b967-4b22efaa3afd] INFO  c.b.a.controller.AccountController - Account types endpoint called
+2025-11-09 19:18:43.667 [http-nio-8082-exec-4] [4490898f-64a2-4388-b967-4b22efaa3afd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountTypes execution time: 0 ms
+2025-11-09 19:18:43.669 [http-nio-8082-exec-4] [4490898f-64a2-4388-b967-4b22efaa3afd] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/public/account-types - Status 200 - Duration: 2ms
+2025-11-09 19:19:12.806 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:12.808 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:19:12.874 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:12.877 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 67 ms
+2025-11-09 19:19:12.877 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 69 ms
+2025-11-09 19:19:12.878 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 69 ms
+2025-11-09 19:19:12.881 [http-nio-8082-exec-6] [725158b7-e650-454b-8f56-49581a778b08] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 75ms
+2025-11-09 19:19:12.905 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:12.906 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:19:12.910 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:12.911 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 5 ms
+2025-11-09 19:19:12.911 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 5 ms
+2025-11-09 19:19:12.911 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 5 ms
+2025-11-09 19:19:12.914 [http-nio-8082-exec-2] [99260661-8813-4d70-9466-79efd0e1a38c] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 9ms
+2025-11-09 19:19:14.036 [http-nio-8082-exec-1] [f2f80a27-0438-438b-b9f8-ab899996c714] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/public/account-types 
+2025-11-09 19:19:14.037 [http-nio-8082-exec-1] [f2f80a27-0438-438b-b9f8-ab899996c714] INFO  c.b.a.controller.AccountController - Account types endpoint called
+2025-11-09 19:19:14.037 [http-nio-8082-exec-1] [f2f80a27-0438-438b-b9f8-ab899996c714] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountTypes execution time: 0 ms
+2025-11-09 19:19:14.038 [http-nio-8082-exec-1] [f2f80a27-0438-438b-b9f8-ab899996c714] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/public/account-types - Status 200 - Duration: 3ms
+2025-11-09 19:19:14.049 [http-nio-8082-exec-5] [36536410-16c0-4c0c-8883-62f0c824c780] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/public/account-types 
+2025-11-09 19:19:14.050 [http-nio-8082-exec-5] [36536410-16c0-4c0c-8883-62f0c824c780] INFO  c.b.a.controller.AccountController - Account types endpoint called
+2025-11-09 19:19:14.051 [http-nio-8082-exec-5] [36536410-16c0-4c0c-8883-62f0c824c780] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountTypes execution time: 0 ms
+2025-11-09 19:19:14.053 [http-nio-8082-exec-5] [36536410-16c0-4c0c-8883-62f0c824c780] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/public/account-types - Status 200 - Duration: 4ms
+2025-11-09 19:19:20.038 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.filter.RequestLoggingFilter - Received request: POST /api/accounts/my-account 
+2025-11-09 19:19:20.169 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.controller.AccountController - Received request to create account for authenticated user: shivam-0510
+2025-11-09 19:19:20.169 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.controller.AccountController - Set userId to shivam-0510 from authenticated user
+2025-11-09 19:19:20.171 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.aspect.MetricsAspect - Account creation attempt
+2025-11-09 19:19:20.173 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.service.AccountService - Creating new account for user shivam-0510
+2025-11-09 19:19:20.173 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Account creation request details: com.bankingapplication.account_service.dto.request.AccountCreationRequest@c13a2ec
+2025-11-09 19:19:20.175 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Generated account number: SV8322574352
+2025-11-09 19:19:20.175 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Created account entity: com.bankingapplication.account_service.entity.Account@7d3ea2fa
+2025-11-09 19:19:20.195 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        accounts
+        (account_number, account_type, balance, created_at, currency, daily_transaction_limit, daily_withdrawal_limit, interest_rate, is_active, minimum_balance, overdraft_limit, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+    returning id
+2025-11-09 19:19:20.233 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] CrudRepository.save execution time: 57 ms
+2025-11-09 19:19:20.233 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.service.AccountService - Account created successfully with account number: SV8322574352
+2025-11-09 19:19:20.233 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Creating initial deposit transaction of amount: 10000
+2025-11-09 19:19:20.234 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Building transaction for account: SV8322574352, amount: 10000
+2025-11-09 19:19:20.234 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Generated transaction ID: TXNEB5A0ACFEAA24511
+2025-11-09 19:19:20.235 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.service.AccountService - Built transaction: com.bankingapplication.account_service.entity.Transaction@5e8f4353
+2025-11-09 19:19:20.241 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        transactions
+        (account_id, amount, balance_after_transaction, description, destination_account_number, reference_number, source_account_number, transaction_status, transaction_date, transaction_id, transaction_type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+    returning id
+2025-11-09 19:19:20.254 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] CrudRepository.save execution time: 16 ms
+2025-11-09 19:19:20.254 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.service.AccountService - Initial deposit transaction created for account: SV8322574352, transaction ID: TXNEB5A0ACFEAA24511
+2025-11-09 19:19:20.254 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.createAccount execution time: 82 ms
+2025-11-09 19:19:20.255 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.aspect.MetricsAspect - Account created successfully
+2025-11-09 19:19:20.266 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.controller.AccountController - Account created successfully with ID: 3
+2025-11-09 19:19:20.266 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.createMyAccount execution time: 97 ms
+2025-11-09 19:19:20.268 [http-nio-8082-exec-2] [e3286e23-821f-4067-a7e9-e99383f90ea8] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: POST /api/accounts/my-account - Status 201 - Duration: 230ms
+2025-11-09 19:19:20.312 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:20.314 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:19:20.318 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:20.321 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 6 ms
+2025-11-09 19:19:20.321 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 7 ms
+2025-11-09 19:19:20.321 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 7 ms
+2025-11-09 19:19:20.323 [http-nio-8082-exec-1] [cf4839d8-ac36-4ae8-bb5d-025640e07ff8] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 11ms
+2025-11-09 19:19:20.338 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:20.339 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:19:20.341 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:20.345 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 4 ms
+2025-11-09 19:19:20.345 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 4 ms
+2025-11-09 19:19:20.345 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 5 ms
+2025-11-09 19:19:20.347 [http-nio-8082-exec-5] [af0e0e79-6444-4aff-997c-43adb0a220ce] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 9ms
+2025-11-09 19:19:23.298 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:19:23.301 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:19:23.301 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:19:23.303 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:19:23.306 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 4 ms
+2025-11-09 19:19:23.306 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 4 ms
+2025-11-09 19:19:23.306 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 4 ms
+2025-11-09 19:19:23.307 [http-nio-8082-exec-3] [65938444-9681-4703-96db-439781542057] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 9ms
+2025-11-09 19:19:23.318 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:19:23.319 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:19:23.320 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:19:23.321 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:19:23.323 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 3 ms
+2025-11-09 19:19:23.323 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 3 ms
+2025-11-09 19:19:23.323 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 3 ms
+2025-11-09 19:19:23.324 [http-nio-8082-exec-9] [990b4957-91e2-49c1-b567-3f69555140dd] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 6ms
+2025-11-09 19:19:28.158 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:19:28.160 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:19:28.160 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:19:28.161 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:19:28.165 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 5 ms
+2025-11-09 19:19:28.167 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 6 ms
+2025-11-09 19:19:28.167 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 6 ms
+2025-11-09 19:19:28.168 [http-nio-8082-exec-6] [d55b0c01-5111-4fc1-b19d-a08d6df3a510] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 10ms
+2025-11-09 19:19:28.175 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/all 
+2025-11-09 19:19:28.176 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] INFO  c.b.a.controller.AccountController - Admin/Manager requested all accounts
+2025-11-09 19:19:28.176 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] INFO  c.b.a.service.AccountService - Fetching all accounts
+2025-11-09 19:19:28.177 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0
+2025-11-09 19:19:28.180 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] ListCrudRepository.findAll execution time: 4 ms
+2025-11-09 19:19:28.180 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAllAccounts execution time: 4 ms
+2025-11-09 19:19:28.181 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAllAccounts execution time: 4 ms
+2025-11-09 19:19:28.181 [http-nio-8082-exec-2] [201c9f6a-c4a4-46ed-a38f-3ea3cf662448] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/all - Status 200 - Duration: 6ms
+2025-11-09 19:19:31.372 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/SV8322574352 
+2025-11-09 19:19:31.373 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV8322574352 
+2025-11-09 19:19:31.386 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.386 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.388 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 7 ms
+2025-11-09 19:19:31.388 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 8 ms
+2025-11-09 19:19:31.389 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] INFO  c.b.a.service.AccountService - Fetching account with account number: SV8322574352
+2025-11-09 19:19:31.390 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.390 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 1 ms
+2025-11-09 19:19:31.391 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountByNumber execution time: 2 ms
+2025-11-09 19:19:31.391 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountByNumber execution time: 2 ms
+2025-11-09 19:19:31.392 [http-nio-8082-exec-8] [15187553-a503-48e3-a0ba-f40f1947ad5b] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/SV8322574352 - Status 200 - Duration: 20ms
+2025-11-09 19:19:31.400 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/SV8322574352 
+2025-11-09 19:19:31.401 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 21 ms
+2025-11-09 19:19:31.401 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 22 ms
+2025-11-09 19:19:31.402 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV8322574352
+2025-11-09 19:19:31.403 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.403 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.404 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 2 ms
+2025-11-09 19:19:31.404 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 2 ms
+2025-11-09 19:19:31.404 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 1 ms
+2025-11-09 19:19:31.404 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] INFO  c.b.a.service.AccountService - Fetching account with account number: SV8322574352
+2025-11-09 19:19:31.405 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.407 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 1 ms
+2025-11-09 19:19:31.407 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountByNumber execution time: 1 ms
+2025-11-09 19:19:31.407 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountByNumber execution time: 1 ms
+2025-11-09 19:19:31.407 [http-nio-8082-exec-10] [5fb3869b-9021-49ac-98fc-92567f2bc0d5] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/SV8322574352 - Status 200 - Duration: 7ms
+2025-11-09 19:19:31.411 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.420 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 15 ms
+2025-11-09 19:19:31.421 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 18 ms
+2025-11-09 19:19:31.421 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 19 ms
+2025-11-09 19:19:31.426 [http-nio-8082-exec-1] [95a647fc-042f-4ca9-b482-d2083d0a9576] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV8322574352 - Status 200 - Duration: 53ms
+2025-11-09 19:19:31.433 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV8322574352 
+2025-11-09 19:19:31.435 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.436 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 2 ms
+2025-11-09 19:19:31.436 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 2 ms
+2025-11-09 19:19:31.438 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV8322574352
+2025-11-09 19:19:31.439 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.439 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 2 ms
+2025-11-09 19:19:31.440 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:31.444 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 4 ms
+2025-11-09 19:19:31.445 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 7 ms
+2025-11-09 19:19:31.445 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 7 ms
+2025-11-09 19:19:31.446 [http-nio-8082-exec-5] [5e9d83d1-54e3-46df-8216-f3dfbf4c73d4] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV8322574352 - Status 200 - Duration: 13ms
+2025-11-09 19:19:38.261 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:38.262 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:19:38.263 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:38.266 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 4 ms
+2025-11-09 19:19:38.267 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 4 ms
+2025-11-09 19:19:38.267 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 5 ms
+2025-11-09 19:19:38.269 [http-nio-8082-exec-3] [68f61742-692e-400f-82ab-3434ba2d9a3b] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 8ms
+2025-11-09 19:19:38.283 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:38.285 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:19:38.286 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV0707796962 
+2025-11-09 19:19:38.286 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:38.288 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV0707796962
+2025-11-09 19:19:38.289 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 4 ms
+2025-11-09 19:19:38.289 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 4 ms
+2025-11-09 19:19:38.289 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 4 ms
+2025-11-09 19:19:38.290 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.291 [http-nio-8082-exec-9] [8cf03cae-8132-4ba7-b36b-e0045b1ab5a4] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 8ms
+2025-11-09 19:19:38.292 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 4 ms
+2025-11-09 19:19:38.296 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.298 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 5 ms
+2025-11-09 19:19:38.298 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 10 ms
+2025-11-09 19:19:38.298 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 10 ms
+2025-11-09 19:19:38.300 [http-nio-8082-exec-2] [ee666adb-214c-44e8-932e-f575478afc45] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV0707796962 - Status 200 - Duration: 14ms
+2025-11-09 19:19:38.309 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV0707796962 
+2025-11-09 19:19:38.310 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV0707796962
+2025-11-09 19:19:38.312 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.313 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/CK9162278830 
+2025-11-09 19:19:38.314 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.314 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] INFO  c.b.a.service.TransactionService - Fetching transactions for account: CK9162278830
+2025-11-09 19:19:38.316 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.316 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.318 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.318 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 4 ms
+2025-11-09 19:19:38.318 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:19:38.318 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:19:38.319 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.320 [http-nio-8082-exec-8] [4119d49f-dbad-43aa-b40b-243d9b36b56a] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV0707796962 - Status 200 - Duration: 11ms
+2025-11-09 19:19:38.324 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 5 ms
+2025-11-09 19:19:38.324 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 9 ms
+2025-11-09 19:19:38.324 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 9 ms
+2025-11-09 19:19:38.325 [http-nio-8082-exec-1] [11cdb5e0-6979-4dd6-9075-62950a95f6c0] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/CK9162278830 - Status 200 - Duration: 12ms
+2025-11-09 19:19:38.332 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV0707796962 
+2025-11-09 19:19:38.334 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV0707796962
+2025-11-09 19:19:38.337 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/CK9162278830 
+2025-11-09 19:19:38.337 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.338 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] INFO  c.b.a.service.TransactionService - Fetching transactions for account: CK9162278830
+2025-11-09 19:19:38.339 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 5 ms
+2025-11-09 19:19:38.341 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.341 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.342 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.343 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.343 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:19:38.343 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 9 ms
+2025-11-09 19:19:38.344 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.345 [http-nio-8082-exec-5] [b160cd7a-c2ca-4616-ac85-4ac72867e39a] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV0707796962 - Status 200 - Duration: 13ms
+2025-11-09 19:19:38.348 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 5 ms
+2025-11-09 19:19:38.349 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 10 ms
+2025-11-09 19:19:38.349 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 10 ms
+2025-11-09 19:19:38.354 [http-nio-8082-exec-4] [96a76bf0-4f97-427a-b4de-80d6e62f35ad] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/CK9162278830 - Status 200 - Duration: 17ms
+2025-11-09 19:19:38.363 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV0707796962 
+2025-11-09 19:19:38.366 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV0707796962
+2025-11-09 19:19:38.367 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/CK9162278830 
+2025-11-09 19:19:38.368 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.368 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] INFO  c.b.a.service.TransactionService - Fetching transactions for account: CK9162278830
+2025-11-09 19:19:38.370 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.370 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 4 ms
+2025-11-09 19:19:38.372 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.372 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.373 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.374 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.374 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:19:38.374 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:19:38.376 [http-nio-8082-exec-7] [f2c8fa01-7a4c-4c3d-8fc6-cb8cc90864cd] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV0707796962 - Status 200 - Duration: 13ms
+2025-11-09 19:19:38.376 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.376 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 7 ms
+2025-11-09 19:19:38.376 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 7 ms
+2025-11-09 19:19:38.378 [http-nio-8082-exec-3] [15011c88-0364-452a-a57b-5ab887427ac4] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/CK9162278830 - Status 200 - Duration: 11ms
+2025-11-09 19:19:38.388 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/CK9162278830 
+2025-11-09 19:19:38.390 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] INFO  c.b.a.service.TransactionService - Fetching transactions for account: CK9162278830
+2025-11-09 19:19:38.392 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.394 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:19:38.396 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:19:38.399 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 5 ms
+2025-11-09 19:19:38.399 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 9 ms
+2025-11-09 19:19:38.399 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 9 ms
+2025-11-09 19:19:38.401 [http-nio-8082-exec-3] [22e1ac59-f1eb-4e17-9b21-b4ca10b9679b] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/CK9162278830 - Status 200 - Duration: 13ms
+2025-11-09 19:19:44.558 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:44.559 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:19:44.563 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:44.567 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 7 ms
+2025-11-09 19:19:44.567 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 8 ms
+2025-11-09 19:19:44.567 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 8 ms
+2025-11-09 19:19:44.568 [http-nio-8082-exec-10] [d3de558f-666f-439a-9336-752185adc2db] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 10ms
+2025-11-09 19:19:44.575 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:44.575 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:19:44.576 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:44.579 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 3 ms
+2025-11-09 19:19:44.579 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 3 ms
+2025-11-09 19:19:44.579 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 3 ms
+2025-11-09 19:19:44.580 [http-nio-8082-exec-1] [af1b70e5-dbfa-4b4e-a849-d2099a75c9de] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 5ms
+2025-11-09 19:19:45.423 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:45.423 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:19:45.424 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:45.426 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 3 ms
+2025-11-09 19:19:45.426 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 3 ms
+2025-11-09 19:19:45.426 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 3 ms
+2025-11-09 19:19:45.427 [http-nio-8082-exec-4] [c2f55a2e-ad6d-4e60-9511-d1f116800895] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 4ms
+2025-11-09 19:19:45.435 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:45.436 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:19:45.437 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:45.440 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 2 ms
+2025-11-09 19:19:45.440 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 3 ms
+2025-11-09 19:19:45.440 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 3 ms
+2025-11-09 19:19:45.441 [http-nio-8082-exec-7] [fdf67ef6-c04c-45aa-b1c2-40e4010ebc97] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 6ms
+2025-11-09 19:19:46.306 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:46.307 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:19:46.308 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:46.310 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 2 ms
+2025-11-09 19:19:46.310 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 2 ms
+2025-11-09 19:19:46.310 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 3 ms
+2025-11-09 19:19:46.311 [http-nio-8082-exec-6] [f332c8ff-d3d1-40bb-a148-3d904fa997be] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 5ms
+2025-11-09 19:19:46.318 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:19:46.319 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] INFO  c.b.a.service.AccountService - Fetching accounts for user: john_doe
+2025-11-09 19:19:46.321 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:19:46.323 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 3 ms
+2025-11-09 19:19:46.323 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 3 ms
+2025-11-09 19:19:46.323 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 3 ms
+2025-11-09 19:19:46.324 [http-nio-8082-exec-3] [c8b02cc1-57d9-40a7-8ef4-6c5bc8a5196c] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 6ms
+2025-11-09 19:20:01.702 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:20:01.705 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:20:01.709 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:20:01.718 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 11 ms
+2025-11-09 19:20:01.718 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 12 ms
+2025-11-09 19:20:01.718 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 12 ms
+2025-11-09 19:20:01.720 [http-nio-8082-exec-3] [26272ef9-5427-4daf-8e6f-8bde5bd9c23b] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 18ms
+2025-11-09 19:20:01.734 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/my-accounts 
+2025-11-09 19:20:01.734 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] INFO  c.b.a.service.AccountService - Fetching accounts for user: shivam-0510
+2025-11-09 19:20:01.738 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.user_id=?
+2025-11-09 19:20:01.740 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByUserId execution time: 4 ms
+2025-11-09 19:20:01.740 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountsByUserId execution time: 5 ms
+2025-11-09 19:20:01.740 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getMyAccounts execution time: 5 ms
+2025-11-09 19:20:01.742 [http-nio-8082-exec-3] [d7efea8a-8bfe-4f24-b932-c78c1ccba55e] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/my-accounts - Status 200 - Duration: 8ms
+2025-11-09 19:20:10.595 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV8322574352 
+2025-11-09 19:20:10.598 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/SV8322574352 
+2025-11-09 19:20:10.604 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.605 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.606 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 7 ms
+2025-11-09 19:20:10.606 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 7 ms
+2025-11-09 19:20:10.608 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV8322574352
+2025-11-09 19:20:10.608 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 7 ms
+2025-11-09 19:20:10.608 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 7 ms
+2025-11-09 19:20:10.608 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] INFO  c.b.a.service.AccountService - Fetching account with account number: SV8322574352
+2025-11-09 19:20:10.610 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.612 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:20:10.612 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.612 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:20:10.612 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountByNumber execution time: 3 ms
+2025-11-09 19:20:10.612 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountByNumber execution time: 3 ms
+2025-11-09 19:20:10.614 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.615 [http-nio-8082-exec-10] [82d72bb1-862b-45ec-b628-1495ae5dfd25] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/SV8322574352 - Status 200 - Duration: 17ms
+2025-11-09 19:20:10.616 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 4 ms
+2025-11-09 19:20:10.616 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:20:10.616 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 8 ms
+2025-11-09 19:20:10.616 [http-nio-8082-exec-3] [2abfda08-d534-4b25-96ad-21ba5ef969d0] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV8322574352 - Status 200 - Duration: 21ms
+2025-11-09 19:20:10.627 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/accounts/SV8322574352 
+2025-11-09 19:20:10.629 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] INFO  c.b.a.filter.RequestLoggingFilter - Received request: GET /api/transactions/account/SV8322574352 
+2025-11-09 19:20:10.631 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.634 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.634 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 4 ms
+2025-11-09 19:20:10.634 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 4 ms
+2025-11-09 19:20:10.634 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] INFO  c.b.a.service.AccountService - Fetching account with account number: SV8322574352
+2025-11-09 19:20:10.634 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 4 ms
+2025-11-09 19:20:10.636 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountAuthorizationService.hasAccountAccess execution time: 4 ms
+2025-11-09 19:20:10.637 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] INFO  c.b.a.service.TransactionService - Fetching transactions for account: SV8322574352
+2025-11-09 19:20:10.638 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.638 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.account_number,
+        a1_0.account_type,
+        a1_0.balance,
+        a1_0.created_at,
+        a1_0.currency,
+        a1_0.daily_transaction_limit,
+        a1_0.daily_withdrawal_limit,
+        a1_0.interest_rate,
+        a1_0.is_active,
+        a1_0.minimum_balance,
+        a1_0.overdraft_limit,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.638 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 3 ms
+2025-11-09 19:20:10.638 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] AccountService.getAccountByNumber execution time: 3 ms
+2025-11-09 19:20:10.638 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] AccountController.getAccountByNumber execution time: 3 ms
+2025-11-09 19:20:10.638 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] AccountRepository.findByAccountNumber execution time: 2 ms
+2025-11-09 19:20:10.640 [http-nio-8082-exec-8] [f74ac583-7b8a-46c7-92dc-3acb646fa8fe] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/accounts/SV8322574352 - Status 200 - Duration: 13ms
+2025-11-09 19:20:10.642 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.account_id,
+        t1_0.amount,
+        t1_0.balance_after_transaction,
+        t1_0.description,
+        t1_0.destination_account_number,
+        t1_0.reference_number,
+        t1_0.source_account_number,
+        t1_0.transaction_status,
+        t1_0.transaction_date,
+        t1_0.transaction_id,
+        t1_0.transaction_type 
+    from
+        transactions t1_0 
+    left join
+        accounts a1_0 
+            on a1_0.id=t1_0.account_id 
+    where
+        a1_0.account_number=?
+2025-11-09 19:20:10.642 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [REPOSITORY] TransactionRepository.findByAccountAccountNumber execution time: 4 ms
+2025-11-09 19:20:10.642 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [SERVICE] TransactionService.getTransactionsByAccountNumber execution time: 7 ms
+2025-11-09 19:20:10.642 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] DEBUG c.b.a.a.PerformanceMonitoringAspect - [PERFORMANCE] [CONTROLLER] TransactionController.getTransactionsByAccountNumber execution time: 7 ms
+2025-11-09 19:20:10.645 [http-nio-8082-exec-5] [73b47108-6c33-4f53-93a2-1acf58050c08] INFO  c.b.a.filter.RequestLoggingFilter - Completed request: GET /api/transactions/account/SV8322574352 - Status 200 - Duration: 16ms
