@@ -31,17 +31,21 @@ import com.bankingapplication.account_service.service.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/api/accounts")
-@RequiredArgsConstructor
 @Tag(name = "Account API", description = "Endpoints for managing bank accounts")
-@Slf4j
 public class AccountController {
 
+    private static final Logger log = LoggerFactory.getLogger(AccountController.class);
+
     private final AccountService accountService;
+
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
@@ -170,6 +174,15 @@ public class AccountController {
     @Operation(summary = "Get current user's accounts", description = "Retrieve all accounts owned by the current authenticated user")
     public ResponseEntity<ApiResponse<List<AccountDTO>>> getMyAccounts(@CurrentUser UserPrincipal currentUser) {
         List<AccountDTO> accounts = accountService.getAccountsByUserId(currentUser.getUsername());
+        return ResponseEntity.ok(ApiResponse.success(accounts));
+    }
+
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    @Operation(summary = "Get all accounts", description = "Retrieve all accounts in the system (Admin/Manager only)")
+    public ResponseEntity<ApiResponse<List<AccountDTO>>> getAllAccounts() {
+        log.info("Admin/Manager requested all accounts");
+        List<AccountDTO> accounts = accountService.getAllAccounts();
         return ResponseEntity.ok(ApiResponse.success(accounts));
     }
 

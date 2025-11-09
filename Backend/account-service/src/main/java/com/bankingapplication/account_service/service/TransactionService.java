@@ -29,19 +29,29 @@ import com.bankingapplication.account_service.repository.TransactionRepository;
 import com.bankingapplication.account_service.util.AccountNumberGenerator;
 import com.bankingapplication.account_service.util.PaginationUtil;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class TransactionService {
+
+    private static final Logger log = LoggerFactory.getLogger(TransactionService.class);
 
     private final AccountRepository accountRepository;
     private final TransactionRepository transactionRepository;
     private final EntityMapper entityMapper;
     private final AccountService accountService;
     private final AccountNumberGenerator accountNumberGenerator;
+
+    public TransactionService(AccountRepository accountRepository, TransactionRepository transactionRepository,
+                              EntityMapper entityMapper, AccountService accountService,
+                              AccountNumberGenerator accountNumberGenerator) {
+        this.accountRepository = accountRepository;
+        this.transactionRepository = transactionRepository;
+        this.entityMapper = entityMapper;
+        this.accountService = accountService;
+        this.accountNumberGenerator = accountNumberGenerator;
+    }
 
     @Transactional
     public TransactionDTO deposit(DepositRequest request) {
@@ -64,16 +74,15 @@ public class TransactionService {
         accountRepository.save(account);
 
         // Create transaction record
-        Transaction transaction = Transaction.builder()
-                .account(account)
-                .transactionId(accountNumberGenerator.generateTransactionId())
-                .amount(request.getAmount())
-                .transactionType(TransactionType.DEPOSIT)
-                .status(TransactionStatus.COMPLETED)
-                .description(request.getDescription() != null ? request.getDescription() : "Deposit")
-                .referenceNumber(request.getReferenceNumber())
-                .balanceAfterTransaction(newBalance)
-                .build();
+        Transaction transaction = new Transaction();
+        transaction.setAccount(account);
+        transaction.setTransactionId(accountNumberGenerator.generateTransactionId());
+        transaction.setAmount(request.getAmount());
+        transaction.setTransactionType(TransactionType.DEPOSIT);
+        transaction.setStatus(TransactionStatus.COMPLETED);
+        transaction.setDescription(request.getDescription() != null ? request.getDescription() : "Deposit");
+        transaction.setReferenceNumber(request.getReferenceNumber());
+        transaction.setBalanceAfterTransaction(newBalance);
 
         Transaction savedTransaction = transactionRepository.save(transaction);
         log.info("Deposit completed successfully, new balance: {}", newBalance);
@@ -118,16 +127,15 @@ public class TransactionService {
         accountRepository.save(account);
 
         // Create transaction record
-        Transaction transaction = Transaction.builder()
-                .account(account)
-                .transactionId(accountNumberGenerator.generateTransactionId())
-                .amount(request.getAmount())
-                .transactionType(TransactionType.WITHDRAWAL)
-                .status(TransactionStatus.COMPLETED)
-                .description(request.getDescription() != null ? request.getDescription() : "Withdrawal")
-                .referenceNumber(request.getReferenceNumber())
-                .balanceAfterTransaction(newBalance)
-                .build();
+        Transaction transaction = new Transaction();
+        transaction.setAccount(account);
+        transaction.setTransactionId(accountNumberGenerator.generateTransactionId());
+        transaction.setAmount(request.getAmount());
+        transaction.setTransactionType(TransactionType.WITHDRAWAL);
+        transaction.setStatus(TransactionStatus.COMPLETED);
+        transaction.setDescription(request.getDescription() != null ? request.getDescription() : "Withdrawal");
+        transaction.setReferenceNumber(request.getReferenceNumber());
+        transaction.setBalanceAfterTransaction(newBalance);
 
         Transaction savedTransaction = transactionRepository.save(transaction);
         log.info("Withdrawal completed successfully, new balance: {}", newBalance);
@@ -180,32 +188,30 @@ public class TransactionService {
         String transferReference = accountNumberGenerator.generateReferenceNumber();
 
         // Create outgoing transaction for source account
-        Transaction sourceTransaction = Transaction.builder()
-                .account(sourceAccount)
-                .transactionId(accountNumberGenerator.generateTransactionId())
-                .amount(request.getAmount())
-                .transactionType(TransactionType.TRANSFER)
-                .status(TransactionStatus.COMPLETED)
-                .description(request.getDescription() != null ? request.getDescription() : "Transfer to " + request.getDestinationAccountNumber())
-                .referenceNumber(request.getReferenceNumber() != null ? request.getReferenceNumber() : transferReference)
-                .sourceAccountNumber(request.getSourceAccountNumber())
-                .destinationAccountNumber(request.getDestinationAccountNumber())
-                .balanceAfterTransaction(newSourceBalance)
-                .build();
+        Transaction sourceTransaction = new Transaction();
+        sourceTransaction.setAccount(sourceAccount);
+        sourceTransaction.setTransactionId(accountNumberGenerator.generateTransactionId());
+        sourceTransaction.setAmount(request.getAmount());
+        sourceTransaction.setTransactionType(TransactionType.TRANSFER);
+        sourceTransaction.setStatus(TransactionStatus.COMPLETED);
+        sourceTransaction.setDescription(request.getDescription() != null ? request.getDescription() : "Transfer to " + request.getDestinationAccountNumber());
+        sourceTransaction.setReferenceNumber(request.getReferenceNumber() != null ? request.getReferenceNumber() : transferReference);
+        sourceTransaction.setSourceAccountNumber(request.getSourceAccountNumber());
+        sourceTransaction.setDestinationAccountNumber(request.getDestinationAccountNumber());
+        sourceTransaction.setBalanceAfterTransaction(newSourceBalance);
 
         // Create incoming transaction for destination account
-        Transaction destinationTransaction = Transaction.builder()
-                .account(destinationAccount)
-                .transactionId(accountNumberGenerator.generateTransactionId())
-                .amount(request.getAmount())
-                .transactionType(TransactionType.DEPOSIT)
-                .status(TransactionStatus.COMPLETED)
-                .description(request.getDescription() != null ? request.getDescription() : "Transfer from " + request.getSourceAccountNumber())
-                .referenceNumber(request.getReferenceNumber() != null ? request.getReferenceNumber() : transferReference)
-                .sourceAccountNumber(request.getSourceAccountNumber())
-                .destinationAccountNumber(request.getDestinationAccountNumber())
-                .balanceAfterTransaction(newDestinationBalance)
-                .build();
+        Transaction destinationTransaction = new Transaction();
+        destinationTransaction.setAccount(destinationAccount);
+        destinationTransaction.setTransactionId(accountNumberGenerator.generateTransactionId());
+        destinationTransaction.setAmount(request.getAmount());
+        destinationTransaction.setTransactionType(TransactionType.DEPOSIT);
+        destinationTransaction.setStatus(TransactionStatus.COMPLETED);
+        destinationTransaction.setDescription(request.getDescription() != null ? request.getDescription() : "Transfer from " + request.getSourceAccountNumber());
+        destinationTransaction.setReferenceNumber(request.getReferenceNumber() != null ? request.getReferenceNumber() : transferReference);
+        destinationTransaction.setSourceAccountNumber(request.getSourceAccountNumber());
+        destinationTransaction.setDestinationAccountNumber(request.getDestinationAccountNumber());
+        destinationTransaction.setBalanceAfterTransaction(newDestinationBalance);
 
         transactionRepository.save(destinationTransaction);
         Transaction savedSourceTransaction = transactionRepository.save(sourceTransaction);

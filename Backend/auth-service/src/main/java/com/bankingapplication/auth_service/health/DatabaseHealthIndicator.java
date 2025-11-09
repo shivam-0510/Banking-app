@@ -1,18 +1,22 @@
 package com.bankingapplication.auth_service.health;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-@Slf4j
-@RequiredArgsConstructor
 public class DatabaseHealthIndicator implements HealthIndicator {
 
+    private static final Logger log = LoggerFactory.getLogger(DatabaseHealthIndicator.class);
+
     private final JdbcTemplate jdbcTemplate;
+
+    public DatabaseHealthIndicator(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public Health health() {

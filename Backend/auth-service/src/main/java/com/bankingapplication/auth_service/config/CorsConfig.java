@@ -14,8 +14,8 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
 
-        // Allow requests from frontend origin
-        config.addAllowedOrigin("http://localhost:3000");
+        // Allow requests from frontend origin (use pattern for Spring Boot 3.x compatibility)
+        config.addAllowedOriginPattern("http://localhost:3000");
 
         // Allow all headers
         config.addAllowedHeader("*");

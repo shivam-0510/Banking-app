@@ -24,14 +24,15 @@ import com.bankingapplication.auth_service.security.CurrentUser;
 import com.bankingapplication.auth_service.service.UserService;
 
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor
 public class UserController {
 
     private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
@@ -78,6 +79,13 @@ public class UserController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deactivateUser(@PathVariable String username) {
         userService.deactivateUser(username);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{username}/activate")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> activateUser(@PathVariable String username) {
+        userService.activateUser(username);
         return ResponseEntity.noContent().build();
     }
 

@@ -6,15 +6,19 @@ import com.bankingapplication.account_service.entity.Account;
 import com.bankingapplication.account_service.repository.AccountRepository;
 import com.bankingapplication.account_service.security.UserPrincipal;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class AccountAuthorizationService {
 
+    private static final Logger log = LoggerFactory.getLogger(AccountAuthorizationService.class);
+
     private final AccountRepository accountRepository;
+
+    public AccountAuthorizationService(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
 
     public boolean hasAccountAccess(UserPrincipal userPrincipal, String accountNumber) {
         // Admin and Manager roles have access to all accounts

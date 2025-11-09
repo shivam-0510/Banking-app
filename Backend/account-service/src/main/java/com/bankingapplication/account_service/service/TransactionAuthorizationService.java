@@ -6,16 +6,22 @@ import com.bankingapplication.account_service.entity.Transaction;
 import com.bankingapplication.account_service.repository.TransactionRepository;
 import com.bankingapplication.account_service.security.UserPrincipal;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class TransactionAuthorizationService {
+
+    private static final Logger log = LoggerFactory.getLogger(TransactionAuthorizationService.class);
 
     private final TransactionRepository transactionRepository;
     private final AccountAuthorizationService accountAuthorizationService;
+
+    public TransactionAuthorizationService(TransactionRepository transactionRepository,
+                                           AccountAuthorizationService accountAuthorizationService) {
+        this.transactionRepository = transactionRepository;
+        this.accountAuthorizationService = accountAuthorizationService;
+    }
 
     public boolean hasTransactionAccess(UserPrincipal userPrincipal, String transactionId) {
         // Admin and Manager roles have access to all transactions

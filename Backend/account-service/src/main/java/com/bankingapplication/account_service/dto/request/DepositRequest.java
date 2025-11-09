@@ -5,15 +5,6 @@ import java.math.BigDecimal;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class DepositRequest {
 
     @NotBlank(message = "Account number is required")
@@ -26,4 +17,48 @@ public class DepositRequest {
     private String description;
 
     private String referenceNumber;
+
+    // Constructors
+    public DepositRequest() {
+    }
+
+    public DepositRequest(String accountNumber, BigDecimal amount, String description, String referenceNumber) {
+        this.accountNumber = accountNumber;
+        this.amount = amount;
+        this.description = description;
+        this.referenceNumber = referenceNumber;
+    }
+
+    // Getters and Setters
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
+    }
 }

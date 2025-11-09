@@ -19,14 +19,16 @@ import com.bankingapplication.auth_service.repository.UserPreferencesRepository;
 import com.bankingapplication.auth_service.repository.UserRepository;
 import com.bankingapplication.auth_service.util.UserIdGenerator;
 
-import lombok.RequiredArgsConstructor;
-
 @Service
-@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
     private final UserPreferencesRepository preferencesRepository;
+
+    public UserService(UserRepository userRepository, UserPreferencesRepository preferencesRepository) {
+        this.userRepository = userRepository;
+        this.preferencesRepository = preferencesRepository;
+    }
 
     @Transactional
     public UserResponse createUser(UserCreationRequest request) {
@@ -43,32 +45,30 @@ public class UserService {
         }
 
         // Create and save the user
-        User user = User.builder()
-                .username(username)
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .email(request.getEmail())
-                .phoneNumber(request.getPhoneNumber())
-                .dateOfBirth(request.getDateOfBirth())
-                .address(request.getAddress())
-                .city(request.getCity())
-                .state(request.getState())
-                .zipCode(request.getZipCode())
-                .country(request.getCountry())
-                .build();
+        User user = new User();
+        user.setUsername(username);
+        user.setFirstName(request.getFirstName());
+        user.setLastName(request.getLastName());
+        user.setEmail(request.getEmail());
+        user.setPhoneNumber(request.getPhoneNumber());
+        user.setDateOfBirth(request.getDateOfBirth());
+        user.setAddress(request.getAddress());
+        user.setCity(request.getCity());
+        user.setState(request.getState());
+        user.setZipCode(request.getZipCode());
+        user.setCountry(request.getCountry());
 
         User savedUser = userRepository.save(user);
 
         // Create default preferences
-        UserPreferences preferences = UserPreferences.builder()
-                .user(savedUser)
-                .languagePreference("en")
-                .themePreference("light")
-                .notificationEmail(true)
-                .notificationSms(false)
-                .notificationPush(false)
-                .twoFactorAuth(false)
-                .build();
+        UserPreferences preferences = new UserPreferences();
+        preferences.setUser(savedUser);
+        preferences.setLanguagePreference("en");
+        preferences.setThemePreference("light");
+        preferences.setNotificationEmail(true);
+        preferences.setNotificationSms(false);
+        preferences.setNotificationPush(false);
+        preferences.setTwoFactorAuth(false);
 
         preferencesRepository.save(preferences);
 
@@ -170,15 +170,14 @@ public class UserService {
 
         UserPreferences preferences = preferencesRepository.findByUser(user)
                 .orElseGet(() -> {
-                    UserPreferences newPrefs = UserPreferences.builder()
-                            .user(user)
-                            .languagePreference("en")
-                            .themePreference("light")
-                            .notificationEmail(true)
-                            .notificationSms(false)
-                            .notificationPush(false)
-                            .twoFactorAuth(false)
-                            .build();
+                    UserPreferences newPrefs = new UserPreferences();
+                    newPrefs.setUser(user);
+                    newPrefs.setLanguagePreference("en");
+                    newPrefs.setThemePreference("light");
+                    newPrefs.setNotificationEmail(true);
+                    newPrefs.setNotificationSms(false);
+                    newPrefs.setNotificationPush(false);
+                    newPrefs.setTwoFactorAuth(false);
                     return preferencesRepository.save(newPrefs);
                 });
 
@@ -228,38 +227,47 @@ public class UserService {
         userRepository.save(user);
     }
 
+    @Transactional
+    public void activateUser(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new AuthServiceException("User not found", HttpStatus.NOT_FOUND));
+
+        user.setEnabled(true);
+        userRepository.save(user);
+    }
+
     // Helper method to map User and UserPreferences to UserResponse
     private UserResponse mapToUserResponse(User user, UserPreferences preferences) {
         UserPreferencesResponse preferencesResponse = null;
         if (preferences != null) {
-            preferencesResponse = UserPreferencesResponse.builder()
-                    .languagePreference(preferences.getLanguagePreference())
-                    .notificationEmail(preferences.isNotificationEmail())
-                    .notificationSms(preferences.isNotificationSms())
-                    .notificationPush(preferences.isNotificationPush())
-                    .twoFactorAuth(preferences.isTwoFactorAuth())
-                    .themePreference(preferences.getThemePreference())
-                    .updatedAt(preferences.getUpdatedAt())
-                    .build();
+            preferencesResponse = new UserPreferencesResponse(
+                    preferences.getLanguagePreference(),
+                    preferences.isNotificationEmail(),
+                    preferences.isNotificationSms(),
+                    preferences.isNotificationPush(),
+                    preferences.isTwoFactorAuth(),
+                    preferences.getThemePreference(),
+                    preferences.getUpdatedAt()
+            );
         }
 
-        return UserResponse.builder()
-                .userId(user.getUsername()) // Using username as userId for compatibility
-                .firstName(user.getFirstName())
-                .lastName(user.getLastName())
-                .email(user.getEmail())
-                .phoneNumber(user.getPhoneNumber())
-                .dateOfBirth(user.getDateOfBirth())
-                .address(user.getAddress())
-                .city(user.getCity())
-                .state(user.getState())
-                .zipCode(user.getZipCode())
-                .country(user.getCountry())
-                .profilePicture(user.getProfilePicture())
-                .createdAt(user.getCreatedAt())
-                .updatedAt(user.getUpdatedAt())
-                .active(user.isEnabled())
-                .preferences(preferencesResponse)
-                .build();
+        UserResponse response = new UserResponse();
+        response.setUserId(user.getUsername()); // Using username as userId for compatibility
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
+        response.setEmail(user.getEmail());
+        response.setPhoneNumber(user.getPhoneNumber());
+        response.setDateOfBirth(user.getDateOfBirth());
+        response.setAddress(user.getAddress());
+        response.setCity(user.getCity());
+        response.setState(user.getState());
+        response.setZipCode(user.getZipCode());
+        response.setCountry(user.getCountry());
+        response.setProfilePicture(user.getProfilePicture());
+        response.setCreatedAt(user.getCreatedAt());
+        response.setUpdatedAt(user.getUpdatedAt());
+        response.setActive(user.isEnabled());
+        response.setPreferences(preferencesResponse);
+        return response;
     }
 }

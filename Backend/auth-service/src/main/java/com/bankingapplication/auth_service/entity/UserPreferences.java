@@ -12,17 +12,8 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
 @Table(name = "user_preferences")
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class UserPreferences {
 
     @Id
@@ -74,5 +65,105 @@ public class UserPreferences {
     @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
+    }
+
+    // Constructors
+    public UserPreferences() {
+    }
+
+    public UserPreferences(Long id, User user, String languagePreference, boolean notificationEmail,
+                          boolean notificationSms, boolean notificationPush, boolean twoFactorAuth,
+                          String themePreference, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.user = user;
+        this.languagePreference = languagePreference;
+        this.notificationEmail = notificationEmail;
+        this.notificationSms = notificationSms;
+        this.notificationPush = notificationPush;
+        this.twoFactorAuth = twoFactorAuth;
+        this.themePreference = themePreference;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getLanguagePreference() {
+        return languagePreference;
+    }
+
+    public void setLanguagePreference(String languagePreference) {
+        this.languagePreference = languagePreference;
+    }
+
+    public boolean isNotificationEmail() {
+        return notificationEmail;
+    }
+
+    public void setNotificationEmail(boolean notificationEmail) {
+        this.notificationEmail = notificationEmail;
+    }
+
+    public boolean isNotificationSms() {
+        return notificationSms;
+    }
+
+    public void setNotificationSms(boolean notificationSms) {
+        this.notificationSms = notificationSms;
+    }
+
+    public boolean isNotificationPush() {
+        return notificationPush;
+    }
+
+    public void setNotificationPush(boolean notificationPush) {
+        this.notificationPush = notificationPush;
+    }
+
+    public boolean isTwoFactorAuth() {
+        return twoFactorAuth;
+    }
+
+    public void setTwoFactorAuth(boolean twoFactorAuth) {
+        this.twoFactorAuth = twoFactorAuth;
+    }
+
+    public String getThemePreference() {
+        return themePreference;
+    }
+
+    public void setThemePreference(String themePreference) {
+        this.themePreference = themePreference;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

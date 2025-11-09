@@ -1,15 +1,6 @@
 package com.bankingapplication.auth_service.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class LoginRequest {
 
     @NotBlank(message = "Username/email is required")
@@ -17,4 +8,30 @@ public class LoginRequest {
 
     @NotBlank(message = "Password is required")
     private String password;
+
+    // Constructors
+    public LoginRequest() {
+    }
+
+    public LoginRequest(String usernameOrEmail, String password) {
+        this.usernameOrEmail = usernameOrEmail;
+        this.password = password;
+    }
+
+    // Getters and Setters
+    public String getUsernameOrEmail() {
+        return usernameOrEmail;
+    }
+
+    public void setUsernameOrEmail(String usernameOrEmail) {
+        this.usernameOrEmail = usernameOrEmail;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -2,9 +2,6 @@ package com.bankingapplication.auth_service.exception;
 
 import org.springframework.http.HttpStatus;
 
-import lombok.Getter;
-
-@Getter
 public class AuthException extends RuntimeException {
 
     private final HttpStatus status;
@@ -16,5 +13,9 @@ public class AuthException extends RuntimeException {
 
     public AuthException(String message) {
         this(message, HttpStatus.BAD_REQUEST);
+    }
+
+    public HttpStatus getStatus() {
+        return status;
     }
 }

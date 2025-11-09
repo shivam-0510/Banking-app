@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import java.util.HashSet;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,16 +29,13 @@ class UserDetailsServiceImplTest {
     void loadUserByUsername_ShouldReturnUserDetails_WhenUserExists() {
         // Given
         String username = "testuser";
-        User user = User.builder()
-                .id(1L)
-                .username(username)
-                .email("test@example.com")
-                .password("password")
-                .enabled(true)
-                .accountNonExpired(true)
-                .accountNonLocked(true)
-                .credentialsNonExpired(true)
-                .build();
+        User user = new User();
+        user.setId(1L);
+        user.setUsername(username);
+        user.setEmail("test@example.com");
+        user.setPassword("password");
+        user.setEnabled(true);
+        user.setRoles(new HashSet<>());
 
         when(userRepository.findByUsernameOrEmail(username, username))
                 .thenReturn(Optional.of(user));

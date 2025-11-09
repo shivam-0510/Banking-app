@@ -7,7 +7,6 @@ import com.bankingapplication.auth_service.entity.User;
 import com.bankingapplication.auth_service.exception.AuthException;
 import com.bankingapplication.auth_service.repository.UserRepository;
 import com.bankingapplication.auth_service.security.JwtTokenProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,10 +18,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 @Service
-@RequiredArgsConstructor
 public class AuthService {
 
     private final UserRepository userRepository;
@@ -30,6 +29,16 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserDetailsServiceImpl userDetailsService;
+
+    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
+                       AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider,
+                       UserDetailsServiceImpl userDetailsService) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.authenticationManager = authenticationManager;
+        this.jwtTokenProvider = jwtTokenProvider;
+        this.userDetailsService = userDetailsService;
+    }
 
     public AuthResponse register(RegisterRequest request) {
         // Check if username or email already exists
@@ -42,14 +51,13 @@ public class AuthService {
         }
 
         // Create new user
-        User user = User.builder()
-                .username(request.getUsername())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .roles(Collections.singleton("USER"))
-                .build();
+        User user = new User();
+        user.setUsername(request.getUsername());
+        user.setEmail(request.getEmail());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setFirstName(request.getFirstName());
+        user.setLastName(request.getLastName());
+        user.setRoles(new HashSet<>(Collections.singleton("USER")));
 
         userRepository.save(user);
 
@@ -65,14 +73,15 @@ public class AuthService {
         String accessToken = jwtTokenProvider.generateToken(claims, userDetails);
         String refreshToken = jwtTokenProvider.generateRefreshToken(userDetails);
 
-        return AuthResponse.builder()
-                .accessToken(accessToken)
-                .refreshToken(refreshToken)
-                .tokenType("Bearer")
-                .expiresIn(3600L) // 1 hour
-                .username(user.getUsername())
-                .email(user.getEmail())
-                .build();
+        AuthResponse response = new AuthResponse();
+        response.setAccessToken(accessToken);
+        response.setRefreshToken(refreshToken);
+        response.setTokenType("Bearer");
+        response.setExpiresIn(3600L); // 1 hour
+        response.setUsername(user.getUsername());
+        response.setEmail(user.getEmail());
+        response.setSuccess(true);
+        return response;
     }
 
     public AuthResponse login(LoginRequest loginRequest) {
@@ -100,13 +109,14 @@ public class AuthService {
         String accessToken = jwtTokenProvider.generateToken(claims, userDetails);
         String refreshToken = jwtTokenProvider.generateRefreshToken(userDetails);
 
-        return AuthResponse.builder()
-                .accessToken(accessToken)
-                .refreshToken(refreshToken)
-                .tokenType("Bearer")
-                .expiresIn(3600L) // 1 hour
-                .username(user.getUsername())
-                .email(user.getEmail())
-                .build();
+        AuthResponse response = new AuthResponse();
+        response.setAccessToken(accessToken);
+        response.setRefreshToken(refreshToken);
+        response.setTokenType("Bearer");
+        response.setExpiresIn(3600L); // 1 hour
+        response.setUsername(user.getUsername());
+        response.setEmail(user.getEmail());
+        response.setSuccess(true);
+        return response;
     }
 }

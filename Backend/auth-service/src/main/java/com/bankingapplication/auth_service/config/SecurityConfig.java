@@ -18,16 +18,19 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.bankingapplication.auth_service.security.JwtAuthenticationFilter;
 import com.bankingapplication.auth_service.service.UserDetailsServiceImpl;
 
-import lombok.RequiredArgsConstructor;
-
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserDetailsServiceImpl userDetailsService;
+
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter,
+                         UserDetailsServiceImpl userDetailsService) {
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+        this.userDetailsService = userDetailsService;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

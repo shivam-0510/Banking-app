@@ -27,15 +27,16 @@ import com.bankingapplication.account_service.service.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-
 @RestController
 @RequestMapping("/api/transactions")
-@RequiredArgsConstructor
 @Tag(name = "Transaction API", description = "Endpoints for managing bank transactions")
 public class TransactionController {
 
     private final TransactionService transactionService;
+
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     @PostMapping("/deposit")
     @PreAuthorize("hasRole('ADMIN') or hasRole('TELLER') or @accountAuthorizationService.hasAccountAccess(authentication.principal, #request.accountNumber)")

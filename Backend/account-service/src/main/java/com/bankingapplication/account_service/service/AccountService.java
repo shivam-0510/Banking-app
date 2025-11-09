@@ -26,18 +26,26 @@ import com.bankingapplication.account_service.repository.TransactionRepository;
 import com.bankingapplication.account_service.util.AccountNumberGenerator;
 import com.bankingapplication.account_service.util.PaginationUtil;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class AccountService {
+
+    private static final Logger log = LoggerFactory.getLogger(AccountService.class);
 
     private final AccountRepository accountRepository;
     private final TransactionRepository transactionRepository;
     private final EntityMapper entityMapper;
     private final AccountNumberGenerator accountNumberGenerator;
+
+    public AccountService(AccountRepository accountRepository, TransactionRepository transactionRepository,
+                          EntityMapper entityMapper, AccountNumberGenerator accountNumberGenerator) {
+        this.accountRepository = accountRepository;
+        this.transactionRepository = transactionRepository;
+        this.entityMapper = entityMapper;
+        this.accountNumberGenerator = accountNumberGenerator;
+    }
 
     @Transactional
     public AccountDTO createAccount(AccountCreationRequest request) {
@@ -132,6 +140,12 @@ public class AccountService {
         return accountRepository.count();
     }
 
+    public List<AccountDTO> getAllAccounts() {
+        log.info("Fetching all accounts");
+        List<Account> accounts = accountRepository.findAll();
+        return entityMapper.mapToAccountDTOList(accounts);
+    }
+
     private void createInitialDepositTransaction(Account account, BigDecimal amount) {
         try {
             log.debug("Building transaction for account: {}, amount: {}", account.getAccountNumber(), amount);
@@ -139,17 +153,16 @@ public class AccountService {
             String transactionId = accountNumberGenerator.generateTransactionId();
             log.debug("Generated transaction ID: {}", transactionId);
 
-            Transaction transaction = Transaction.builder()
-                    .account(account)
-                    .transactionId(transactionId)
-                    .amount(amount)
-                    .transactionType(TransactionType.DEPOSIT)
-                    .status(TransactionStatus.COMPLETED)
-                    .description("Initial deposit")
-                    .sourceAccountNumber(null) // No source account for initial deposit
-                    .destinationAccountNumber(account.getAccountNumber())
-                    .balanceAfterTransaction(amount)
-                    .build();
+            Transaction transaction = new Transaction();
+            transaction.setAccount(account);
+            transaction.setTransactionId(transactionId);
+            transaction.setAmount(amount);
+            transaction.setTransactionType(TransactionType.DEPOSIT);
+            transaction.setStatus(TransactionStatus.COMPLETED);
+            transaction.setDescription("Initial deposit");
+            transaction.setSourceAccountNumber(null); // No source account for initial deposit
+            transaction.setDestinationAccountNumber(account.getAccountNumber());
+            transaction.setBalanceAfterTransaction(amount);
 
             log.debug("Built transaction: {}", transaction);
             Transaction savedTransaction = transactionRepository.save(transaction);

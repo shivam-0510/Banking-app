@@ -15,22 +15,22 @@ import com.bankingapplication.account_service.entity.Transaction;
 public class EntityMapper {
 
     public AccountDTO mapToAccountDTO(Account account) {
-        return AccountDTO.builder()
-                .id(account.getId())
-                .accountNumber(account.getAccountNumber())
-                .userId(account.getUserId())
-                .accountType(account.getAccountType())
-                .balance(account.getBalance())
-                .currency(account.getCurrency())
-                .createdAt(account.getCreatedAt())
-                .updatedAt(account.getUpdatedAt())
-                .isActive(account.isActive())
-                .dailyTransactionLimit(account.getDailyTransactionLimit())
-                .dailyWithdrawalLimit(account.getDailyWithdrawalLimit())
-                .interestRate(account.getInterestRate())
-                .overdraftLimit(account.getOverdraftLimit())
-                .minimumBalance(account.getMinimumBalance())
-                .build();
+        return new AccountDTO(
+                account.getId(),
+                account.getAccountNumber(),
+                account.getUserId(),
+                account.getAccountType(),
+                account.getBalance(),
+                account.getCurrency(),
+                account.getCreatedAt(),
+                account.getUpdatedAt(),
+                account.isActive(),
+                account.getDailyTransactionLimit(),
+                account.getDailyWithdrawalLimit(),
+                account.getInterestRate(),
+                account.getOverdraftLimit(),
+                account.getMinimumBalance()
+        );
     }
 
     public List<AccountDTO> mapToAccountDTOList(List<Account> accounts) {
@@ -40,35 +40,35 @@ public class EntityMapper {
     }
 
     public Account mapToAccount(AccountCreationRequest request) {
-        return Account.builder()
-                .userId(request.getUserId())
-                .accountType(request.getAccountType())
-                .balance(request.getInitialDeposit())
-                .currency(request.getCurrency())
-                .dailyTransactionLimit(request.getDailyTransactionLimit())
-                .dailyWithdrawalLimit(request.getDailyWithdrawalLimit())
-                .interestRate(request.getInterestRate())
-                .overdraftLimit(request.getOverdraftLimit())
-                .minimumBalance(request.getMinimumBalance())
-                .build();
+        Account account = new Account();
+        account.setUserId(request.getUserId());
+        account.setAccountType(request.getAccountType());
+        account.setBalance(request.getInitialDeposit());
+        account.setCurrency(request.getCurrency());
+        account.setDailyTransactionLimit(request.getDailyTransactionLimit());
+        account.setDailyWithdrawalLimit(request.getDailyWithdrawalLimit());
+        account.setInterestRate(request.getInterestRate());
+        account.setOverdraftLimit(request.getOverdraftLimit());
+        account.setMinimumBalance(request.getMinimumBalance());
+        return account;
     }
 
     public TransactionDTO mapToTransactionDTO(Transaction transaction) {
-        return TransactionDTO.builder()
-                .id(transaction.getId())
-                .transactionId(transaction.getTransactionId())
-                .accountId(transaction.getAccount().getId())
-                .accountNumber(transaction.getAccount().getAccountNumber())
-                .amount(transaction.getAmount())
-                .transactionType(transaction.getTransactionType())
-                .status(transaction.getStatus())
-                .sourceAccountNumber(transaction.getSourceAccountNumber())
-                .destinationAccountNumber(transaction.getDestinationAccountNumber())
-                .referenceNumber(transaction.getReferenceNumber())
-                .description(transaction.getDescription())
-                .transactionDate(transaction.getTransactionDate())
-                .balanceAfterTransaction(transaction.getBalanceAfterTransaction())
-                .build();
+        return new TransactionDTO(
+                transaction.getId(),
+                transaction.getTransactionId(),
+                transaction.getAccount() != null ? transaction.getAccount().getId() : null,
+                transaction.getAccount() != null ? transaction.getAccount().getAccountNumber() : null,
+                transaction.getAmount(),
+                transaction.getTransactionType(),
+                transaction.getStatus(),
+                transaction.getSourceAccountNumber(),
+                transaction.getDestinationAccountNumber(),
+                transaction.getReferenceNumber(),
+                transaction.getDescription(),
+                transaction.getTransactionDate(),
+                transaction.getBalanceAfterTransaction()
+        );
     }
 
     public List<TransactionDTO> mapToTransactionDTOList(List<Transaction> transactions) {
