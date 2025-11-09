@@ -137,11 +137,11 @@ export const Dashboard: React.FC = () => {
                         ₹{parseFloat(account.balance.toString()).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </p>
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-2 ${
-                        account.isActive
+                        account.active
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-gray-100 text-gray-800'
                       }`}>
-                        {account.isActive ? 'ACTIVE' : 'INACTIVE'}
+                        {account.active ? 'ACTIVE' : 'INACTIVE'}
                       </span>
                     </div>
                   </Link>

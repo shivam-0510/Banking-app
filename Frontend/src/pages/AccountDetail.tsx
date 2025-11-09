@@ -81,11 +81,11 @@ export const AccountDetail: React.FC = () => {
               <p className="text-sm text-gray-500 mt-1">Account Number: {account.accountNumber}</p>
             </div>
             <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-              account.isActive
+              account.active
                 ? 'bg-green-100 text-green-800' 
                 : 'bg-gray-100 text-gray-800'
             }`}>
-              {account.isActive ? 'ACTIVE' : 'INACTIVE'}
+              {account.active ? 'ACTIVE' : 'INACTIVE'}
             </span>
           </div>
 

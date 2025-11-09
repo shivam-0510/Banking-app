@@ -28,7 +28,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
                 <Link to="/dashboard" className="text-2xl font-bold text-primary-600">
-                  Banking App
+                  Bank Matrix
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
