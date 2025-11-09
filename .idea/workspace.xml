@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9db9b88c-5582-4e2f-9a75-457a5b48c847" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Banking app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/aspect/MetricsAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/aspect/MetricsAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/aspect/PerformanceMonitoringAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/aspect/PerformanceMonitoringAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/controller/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/TransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/TransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/AccountCreationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/AccountCreationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/DepositRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/DepositRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/TransferRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/TransferRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/WithdrawalRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/request/WithdrawalRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/response/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/dto/response/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/entity/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/exception/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/exception/ValidationErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/exception/ValidationErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/filter/RequestLoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/filter/RequestLoggingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/health/DatabaseHealthIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/health/DatabaseHealthIndicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/mapper/EntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/mapper/EntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/CustomAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/security/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/AccountAuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/AccountAuthorizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/TransactionAuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/TransactionAuthorizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/account-service/src/main/java/com/bankingapplication/account_service/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/aspect/MetricsAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/aspect/MetricsAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/aspect/PerformanceMonitoringAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/aspect/PerformanceMonitoringAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserCreationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserCreationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserPreferencesRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserPreferencesRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserPreferencesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserPreferencesResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/dto/UserUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/entity/UserPreferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/entity/UserPreferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/AuthException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/AuthException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/AuthServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/AuthServiceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/ValidationErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/exception/ValidationErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/filter/RequestLoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/filter/RequestLoggingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/health/DatabaseHealthIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/health/DatabaseHealthIndicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/main/java/com/bankingapplication/auth_service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/auth-service/src/test/java/com/bankingapplication/auth_service/service/UserDetailsServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/auth-service/src/test/java/com/bankingapplication/auth_service/service/UserDetailsServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banking_application_backend_documentation.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/account-service-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/account-service-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/account-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/account-service.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/auth-service-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/auth-service-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/auth-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/auth-service.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shivam-0510&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shivam-0510/Banking-app.git&quot;,
+    &quot;accountId&quot;: &quot;7b0a129b-23cf-4302-9d14-aebffac191f7&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="35EdSKG0Ao09jRARS2bjqL7xugV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AccountServiceApplication.executor": "Run",
+    "Application.ApiGatewayApplication.executor": "Run",
+    "Application.AuthServiceApplication.executor": "Run",
+    "Application.EurekaServerApplication.executor": "Run",
+    "Maven.banking-application [clean,install...].executor": "Run",
+    "Maven.banking-application [clean,install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Resume-Project/Banking-app",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install -DskipTests" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.AuthServiceApplication">
+    <configuration name="AccountServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bankingapplication.account_service.AccountServiceApplication" />
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankingapplication.account_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bankingapplication.api_gateway.ApiGatewayApplication" />
+      <module name="api-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankingapplication.api_gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bankingapplication.auth_service.AuthServiceApplication" />
+      <module name="auth-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankingapplication.auth_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bankingapplication.eureka_server.EurekaServerApplication" />
+      <module name="eureka-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bankingapplication.eureka_server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AuthServiceApplication" />
+        <item itemvalue="Application.AccountServiceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9db9b88c-5582-4e2f-9a75-457a5b48c847" name="Changes" comment="" />
+      <created>1762679164052</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762679164052</updated>
+    </task>
+    <servers />
+  </component>
+</project>
